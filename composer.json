@@ -1,0 +1,51 @@
+{
+    "name": "neo/core",
+    "description": "Neo core",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nur Wachid",
+            "email": "nur@wach.id"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Neo\\Core\\": "src/"
+        },
+        "files": [
+            "src/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Neo\\Core\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "illuminate/database": "^5.6|^6.0|^7.0|^8.0",
+        "illuminate/support": "^5.6|^6.0|^7.0|^8.0",
+        "intervention/imagecache": "^2.5",
+        "pragmarx/google2fa": "^8.0",
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "spatie/laravel-activitylog": "^4.3",
+        "spatie/laravel-backup": "^6.16",
+        "spatie/laravel-sluggable": "^3.1",
+        "league/fractal": "^0.19.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0 | ^8.5 | ^9.3",
+        "php-coveralls/php-coveralls": "^2.1",
+        "orchestra/testbench": "3.*| ^4.0| ^5.0 | ^6.0",
+        "friendsofphp/php-cs-fixer": "^3.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Neo\\Core\\Providers\\NeoCoreServiceProvider"
+            ]
+        }
+    }
+}
