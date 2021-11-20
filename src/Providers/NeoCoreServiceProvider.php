@@ -41,6 +41,24 @@ class NeoCoreServiceProvider extends ServiceProvider
 
         Media::observe(MediaObserver::class);
 
+        $this->mergeConfigFrom(__DIR__.'../../config/core.php', 'core');
+
+        if (config('core.migration.enable')) {
+            $databasePath = __DIR__.'../../migrations';
+            $this->loadMigrationsFrom($databasePath);
+        }
+
+        if (class_exists(\Illuminate\Foundation\Application::class)) {
+            $this->publishes(
+                [
+                    __DIR__.'../../config/core.php' => config_path('core.php'),
+                ],
+                'config'
+            );
+        }
+
+        $this->loadViewsFrom(realpath(__DIR__.'/../resources/views'), 'core');
+
         Paginator::useBootstrap();
         Config::set('global', $this->options());
 

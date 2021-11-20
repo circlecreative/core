@@ -12,10 +12,7 @@
     "autoload": {
         "psr-4": {
             "Neo\\Core\\": "src/"
-        },
-        "files": [
-            "src/Helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
